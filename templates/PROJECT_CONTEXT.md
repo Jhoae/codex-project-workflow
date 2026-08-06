@@ -68,7 +68,7 @@
 | Backlog |  | Active / Mapped / Missing |  |
 | Current Todo |  | Active / Mapped / Missing |  |
 | Decisions |  | Active / Mapped / Not Applicable |  |
-| Major Decisions |  | Active / Mapped / Not Applicable |  |
+| Technology Decisions |  | Active / Mapped / Not Applicable |  |
 | Troubleshooting |  | Active / Mapped / Not Applicable |  |
 | Archive |  | Active / Mapped / Not Applicable |  |
 
@@ -78,7 +78,7 @@
 - Backlog:
 - Current Todo:
 - Decisions:
-- Major decisions:
+- Technology decisions:
 - Troubleshooting:
 - Archive:
 - Current contracts or designs:

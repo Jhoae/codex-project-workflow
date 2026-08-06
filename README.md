@@ -1,6 +1,6 @@
 # Codex Project Workflow
 
-특정 도구, 방식, 저장소 구조에 종속되지 않는 프로젝트 실행 지침과 문서 템플릿 모음이다. Codex가 프로젝트를 시작할 때 사실을 확인하고, UI 또는 소비자 관점에서 요구사항을 역산하고, 전체 Backlog와 주 단위 Todo를 연결하고, 작업을 작은 Step으로 나누어 구현·검증·기록하도록 돕는다.
+특정 기술이나 저장소 구조에 종속되지 않는 프로젝트 실행 지침과 문서 템플릿 모음이다. Codex가 프로젝트를 시작할 때 사실을 확인하고, UI 또는 소비자 관점에서 요구사항을 역산하고, 전체 Backlog와 주 단위 Todo를 연결하고, 작업을 작은 Step으로 나누어 구현·검증·기록하도록 돕는다.
 
 이 저장소의 목표는 많은 문서를 만드는 것이 아니다. **현재 상태, 결정, 실행 범위, 문제 해결 지식을 서로 다른 책임으로 관리해 다음 작업이 추측이 아니라 증거에서 시작되게 하는 것**이다.
 
@@ -15,7 +15,7 @@ https://github.com/Jhoae/codex-project-workflow 를 현재 프로젝트에 적�
 이 요청에서 **적용**은 원본 Markdown을 그대로 복사하는 작업이 아니다. Codex는 [`BOOTSTRAP.md`](BOOTSTRAP.md)를 먼저 읽고 다음 결과를 만들어야 한다.
 
 - 저장소의 모든 지침과 템플릿을 검토한다.
-- 대상 프로젝트의 산출물, 문서, 설정, 검증 현황, 변경 이력 상태를 먼저 조사한다.
+- 대상 프로젝트의 코드, 문서, 설정, 테스트, Git 상태를 먼저 조사한다.
 - 기존 문서 체계를 보존하면서 각 문서의 책임을 매핑한다.
 - 생성하는 문서를 실제 프로젝트의 목표, 구조, 명령, 상태, 결정으로 채운다.
 - 확인되지 않은 내용은 추측하지 않고 미확정 사항으로 남긴다.
@@ -32,7 +32,7 @@ https://github.com/Jhoae/codex-project-workflow 를 현재 프로젝트에 적�
 3. 전체 할 일은 Backlog에, 이번 주에 끝낼 일은 Weekly Todo에 둔다.
 4. 현재 할 일을 독립적으로 검증 가능한 작은 Step으로 나눈다.
 5. 각 Step을 구현하고 검증한 직후 같은 Todo를 갱신한다.
-6. 결정은 Decision Log에, 되돌리기 어려운 주요 선택은 별도 Major Decision 문서에 남긴다.
+6. 결정은 Decision Log에, 되돌리기 어려운 기술 선택은 별도 기술 결정 문서에 남긴다.
 7. 중요한 문제 해결 과정은 Troubleshooting Log로 분리해 재사용 가능한 지식으로 만든다.
 8. 작업을 넘기거나 중단하기 전에 Context / Handoff에 현재 상태와 다음 한 Step을 남긴다.
 
@@ -46,7 +46,7 @@ https://github.com/Jhoae/codex-project-workflow 를 현재 프로젝트에 적�
 | [`templates/BACKLOG.md`](templates/BACKLOG.md) | 전체 목표와 `Now`, `Next`, `Later`, `Out of Scope` 관리 |
 | [`templates/WEEKLY_TODO.md`](templates/WEEKLY_TODO.md) | 한 주의 목표, 작은 Step, 진행 기록, 검증 결과 관리 |
 | [`templates/DECISION_LOG.md`](templates/DECISION_LOG.md) | 확정·제안·대체된 결정을 시간순으로 기록 |
-| [`templates/MAJOR_DECISION.md`](templates/MAJOR_DECISION.md) | 되돌리기 어려운 주요 결정의 근거와 영향 기록 |
+| [`templates/TECHNOLOGY_DECISION.md`](templates/TECHNOLOGY_DECISION.md) | 되돌리기 어려운 기술·구조 결정의 근거와 영향 기록 |
 | [`templates/TROUBLESHOOTING.md`](templates/TROUBLESHOOTING.md) | 증상, 증거, 원인, 해결, 검증, 한계를 분리해 기록 |
 
 ## 프로젝트에 적용하기
@@ -85,7 +85,7 @@ docs/project-context.md
 docs/backlog.md
 docs/todo/YYMMDD~YYMMDD.md
 docs/decisions.md
-docs/major-decisions/
+docs/technology-decisions/
 docs/troubleshooting.md
 docs/archive/
 ```
@@ -93,7 +93,7 @@ docs/archive/
 모든 원본 템플릿은 적용 과정에서 반드시 검토한다. 다만 기존 프로젝트가 같은 책임을 수행하는 문서를 이미 가지고 있다면 중복 파일을 만들지 않고 그 위치로 매핑한다.
 
 - Project Context / Handoff, Backlog, 현재 Todo, Decision Log, Troubleshooting Log의 책임은 항상 저장 위치를 정한다.
-- Major Decision은 관련 결정이 있을 때 결정별 문서로 생성한다.
+- Technology Decision은 관련 결정이 있을 때 결정별 문서로 생성한다.
 - 보관할 완료 문서나 증거가 생기기 전에는 빈 archive 파일을 만들 필요가 없다.
 - 적용하지 않은 템플릿은 `Not Applicable`로 분류하고 이유를 완료 보고에 남긴다.
 
@@ -104,9 +104,9 @@ docs/archive/
 대상 프로젝트에 생성하는 활성 문서에는 일반적인 작성 안내를 그대로 남기지 않는다. 조사로 확인한 다음 정보를 실제 값으로 작성한다.
 
 - 프로젝트 목적과 관찰 가능한 성공 조건
-- 현재 산출물·검증·실제 제공 상태
+- 현재 구현·테스트·배포 상태
 - 실제 디렉터리와 주요 구성 요소
-- 확인된 실행·검사·검증 방법
+- 확인된 실행, 검사, 테스트, 빌드 명령
 - 현재 우선순위와 활성 작업
 - 확정 결정, 미확정 질문, 위험, 제외 범위
 - 검증 결과와 증거 위치
@@ -161,12 +161,12 @@ Backlog에는 장기 우선순위만 유지하고 세부 실행 로그를 누적
 - 절대 경로, 개인 계정, 비밀값, 특정 환경의 식별 정보를 범용 문서에 넣지 않는다.
 - 완료 시점에는 결과, 검증, 한계, 다음 Step이 서로 구분되어 있어야 한다.
 
-## 도구 중립성
+## 개발 일반 개념과 스택 선택의 경계
 
-- 이 저장소는 특정 구현 수단, 저장 방식, 실행 도구, 검증 도구, 제공 방식을 추천하지 않는다.
-- 범용 문서와 예시에는 특정 제품명이나 특정 분야에만 통하는 선택을 넣지 않는다.
-- 대상 프로젝트에 적용할 때는 실제로 확인된 현재 요소를 사실로 기록할 수 있지만, 이 워크플로를 근거로 새로운 요소의 사용을 권장하지 않는다.
-- 도구 선택이 필요한 경우 프로젝트 목표, 제약, 기존 구조, 검증 가능한 근거를 별도 결정 과정에서 다룬다.
+- `test`, `lint`, `typecheck`, `build`, `E2E`, `API`, `schema`, `migration` 같은 표현은 검증·계약·변경 영향을 빠뜨리지 않기 위한 일반 범주로 사용한다.
+- 이 범주를 언급하는 것은 특정 구현 제품이나 스택의 선택을 권장한다는 의미가 아니다.
+- 범용 원본 문서에서는 특정 언어, 프레임워크, 저장 제품, 실행 도구, 검증 도구, 외부 서비스의 사용을 권장하지 않는다.
+- 대상 프로젝트에 적용할 때는 현재 사용 중임이 확인된 요소를 사실로 기록할 수 있지만, 새로운 요소의 도입은 프로젝트별 근거와 명시적 결정 없이 제안하지 않는다.
 
 ## License
 

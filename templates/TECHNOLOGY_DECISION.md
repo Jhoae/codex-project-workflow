@@ -1,4 +1,4 @@
-# Major Decision: 제목
+# Technology Decision: 제목
 
 - ID:
 - Date:
@@ -13,7 +13,7 @@
 
 ## Constraints
 
-- 호환성, 일정, 비용, 안전, 운영, 정보, 팀 역량 등의 제약
+- 호환성, 일정, 비용, 보안, 운영, 데이터, 팀 역량 등의 제약
 
 ## Decision Drivers
 
@@ -45,16 +45,16 @@
 
 결정 이후의 실제 입력, 처리, 출력, 의존 관계를 설명한다.
 
-## Contract / Information Impact
+## Contract / Data Impact
 
-- 공개 인터페이스, 정보 구조, 전환, 호환성 영향
+- 공개 인터페이스, 데이터 구조, migration, 호환성 영향
 
-## Failure, Safety, and Operations
+## Failure, Security, and Operations
 
 - 예상 실패 방식
-- 관측과 알림
-- 안전 경계
-- 실제 반영, 중단 조건, 복구
+- 관측과 경보
+- 보안 경계
+- 배포, 중단 조건, rollback
 
 ## Verification
 
@@ -66,7 +66,7 @@
 
 - 얻는 것:
 - 감수하는 것:
-- 새로 생기는 유지 책임:
+- 새로 생기는 유지보수 책임:
 
 ## Limits / Revisit Conditions
 
