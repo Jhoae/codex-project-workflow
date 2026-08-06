@@ -4,6 +4,9 @@
 - Updated by:
 - Scope:
 - Status: Active / Paused / Blocked / Complete
+- Workflow source:
+- Workflow revision: Verified revision / Not Verified
+- Bootstrapped at:
 
 ## Objective
 
@@ -56,10 +59,26 @@
 
 다음 작업자가 바로 시작할 수 있는 가장 작은 한 Step과 확인 방법을 적는다.
 
+## Document Responsibility Map
+
+| Responsibility | Location | Status | Notes |
+|---|---|---|---|
+| Project instructions |  | Active / Mapped / Missing |  |
+| Context / Handoff |  | Active / Mapped / Missing |  |
+| Backlog |  | Active / Mapped / Missing |  |
+| Current Todo |  | Active / Mapped / Missing |  |
+| Decisions |  | Active / Mapped / Not Applicable |  |
+| Technology Decisions |  | Active / Mapped / Not Applicable |  |
+| Troubleshooting |  | Active / Mapped / Not Applicable |  |
+| Archive |  | Active / Mapped / Not Applicable |  |
+
 ## Key Links
 
+- Project instructions:
 - Backlog:
 - Current Todo:
 - Decisions:
+- Technology decisions:
 - Troubleshooting:
+- Archive:
 - Current contracts or designs:
