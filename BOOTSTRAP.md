@@ -46,6 +46,7 @@ https://github.com/Jhoae/codex-project-workflow 를 현재 프로젝트에 적�
 - **One source of truth:** 같은 사실을 여러 문서에 복제하지 않고 주 저장 위치와 링크를 정한다.
 - **No secrets:** 토큰, 비밀번호, 개인 정보, 비공개 인증 정보, 민감한 원본 로그를 기록하지 않는다.
 - **File-based continuity:** 다음 작업이 이전 대화 없이 이어질 수 있도록 지속 정보는 프로젝트 파일에 남긴다.
+- **Stack neutrality:** 개발 일반 개념은 사용할 수 있지만, 이 원본을 근거로 특정 제품이나 스택을 새로 권장하지 않는다. 대상 프로젝트에서 확인된 현재 요소는 사실로만 기록한다.
 
 ## 4. Phase 1 — 원본 지침 전체 읽기
 
