@@ -27,11 +27,11 @@ Investigating / Mitigated / Resolved / Unresolved
 
 ### Evidence
 
-- 기록, 오류, 검증, 관측 결과의 요약과 원본 위치
+- 로그, 오류, 테스트, 관측 결과의 요약과 원본 위치
 
 ### Hypotheses
 
-| Hypothesis | Supporting Evidence | Contradicting Evidence | Check | Result |
+| Hypothesis | Supporting Evidence | Contradicting Evidence | Test | Result |
 |---|---|---|---|---|
 |  |  |  |  |  |
 
@@ -47,7 +47,7 @@ Investigating / Mitigated / Resolved / Unresolved
 
 선택한 조치, 수정 범위, 선택 이유를 적는다.
 
-### Safety / Recovery
+### Safety / Rollback
 
 위험, 중단 조건, 복구 절차를 적는다.
 
