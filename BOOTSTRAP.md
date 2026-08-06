@@ -28,11 +28,11 @@ https://github.com/Jhoae/codex-project-workflow 를 현재 프로젝트에 적�
 다음 권한까지 자동으로 확장하지 않는다.
 
 - 애플리케이션 기능 구현 또는 동작 변경
-- 새 의존성 설치
-- 데이터 변경, migration 실행, 배포
+- 새 외부 구성 설치
+- 정보·구조 변경, 실제 제공 환경 반영
 - 외부 시스템 수정
 - 기존 사용자 파일의 삭제 또는 무단 덮어쓰기
-- Git commit, push, pull request 생성
+- 변경 이력 확정, 원격 반영, 검토 요청 생성
 
 추가 작업이 필요하면 별도의 사용자 요청이나 기존 권한 범위를 확인한다.
 
@@ -46,6 +46,7 @@ https://github.com/Jhoae/codex-project-workflow 를 현재 프로젝트에 적�
 - **One source of truth:** 같은 사실을 여러 문서에 복제하지 않고 주 저장 위치와 링크를 정한다.
 - **No secrets:** 토큰, 비밀번호, 개인 정보, 비공개 인증 정보, 민감한 원본 로그를 기록하지 않는다.
 - **File-based continuity:** 다음 작업이 이전 대화 없이 이어질 수 있도록 지속 정보는 프로젝트 파일에 남긴다.
+- **Tool neutrality:** 원본의 범용 문구를 근거로 특정 구현 수단, 저장 방식, 실행 도구, 검증 도구, 제공 방식을 새로 권장하지 않는다.
 
 ## 4. Phase 1 — 원본 지침 전체 읽기
 
@@ -56,7 +57,7 @@ https://github.com/Jhoae/codex-project-workflow 를 현재 프로젝트에 적�
 3. `AGENTS.md`
 4. `templates/` 아래의 모든 Markdown 파일
 
-적용한 원본 URL과 확인 가능한 branch, tag 또는 commit revision을 기록한다. revision을 확인할 수 없으면 `Not Verified`와 확인 방법을 남긴다.
+적용한 원본 URL과 확인 가능한 version 또는 revision 식별자를 기록한다. 식별자를 확인할 수 없으면 `Not Verified`와 확인 방법을 남긴다.
 
 각 템플릿의 문서 책임을 목록으로 만든다.
 
@@ -67,7 +68,7 @@ https://github.com/Jhoae/codex-project-workflow 를 현재 프로젝트에 적�
 | Backlog | 전체 목표와 우선순위 |  | Create / Merge / Map |
 | Weekly Todo | 현재 기간의 Step과 실행 기록 |  | Create / Merge / Map |
 | Decision Log | 결정과 미확정 질문 |  | Create / Merge / Map |
-| Technology Decision | 되돌리기 어려운 기술·구조 결정 |  | Create / Merge / Not Applicable |
+| Major Decision | 되돌리기 어려운 주요 결정 |  | Create / Merge / Not Applicable |
 | Troubleshooting Log | 문제, 원인, 해결, 검증 |  | Create / Merge / Map |
 
 원본 파일을 일부 읽지 못했다면 적용을 완료했다고 보고하지 않는다. 접근할 수 없는 파일과 필요한 다음 조치를 명시한다.
@@ -84,12 +85,12 @@ https://github.com/Jhoae/codex-project-workflow 를 현재 프로젝트에 적�
 
 ### 5.2 저장소와 구현
 
-- Git root, 현재 branch, worktree 상태
+- 프로젝트 루트, 현재 작업 상태, 변경 이력 관리 상태
 - README와 제품·기능 명세
 - 상위 디렉터리 구조와 주요 모듈
-- 설정, 의존성, 실행 진입점
-- 테스트, 빌드, 검사 명령과 관련 설정
-- 공개 인터페이스, 데이터 구조, migration, 배포 문서
+- 설정, 외부 구성, 작업 시작점
+- 실행·검사·검증 방법과 관련 설정
+- 공개 인터페이스, 정보 구조, 전환 절차, 실제 제공 환경 문서
 - UI가 있으면 화면, 사용자 행동, 필요한 데이터와 상태
 - UI가 없으면 실제 소비자, 호출자, 명령, 공개 계약
 
@@ -97,7 +98,7 @@ https://github.com/Jhoae/codex-project-workflow 를 현재 프로젝트에 적�
 
 - 문서에 적힌 명령이 존재하는지 확인한다.
 - 안전하고 빠른 범위에서 현재 동작 또는 검증 상태를 확인한다.
-- 실행하지 않은 테스트나 접근할 수 없는 외부 상태를 통과했다고 기록하지 않는다.
+- 수행하지 않은 검증이나 접근할 수 없는 외부 상태를 통과했다고 기록하지 않는다.
 - 코드, 문서, 실행 결과가 충돌하면 세 상태를 분리해 기록한다.
 
 조사 결과를 다음 범주로 정리한다.
@@ -130,7 +131,7 @@ docs/project-context.md
 docs/backlog.md
 docs/todo/YYMMDD~YYMMDD.md
 docs/decisions.md
-docs/technology-decisions/
+docs/major-decisions/
 docs/troubleshooting.md
 docs/archive/
 ```
@@ -145,7 +146,7 @@ docs/archive/
 
 - 기존 규칙을 보존하고 중복을 제거한다.
 - 범용 원칙보다 프로젝트별·경로별 최신 규칙이 우선하도록 한다.
-- 확인된 실제 실행, 검사, 테스트, 빌드 명령을 프로젝트별 규칙으로 기록한다.
+- 확인된 실제 실행·검사·검증 방법을 프로젝트별 규칙으로 기록한다.
 - 일시적인 상태와 현재 Todo 내용은 넣지 않는다.
 - 프로젝트 문서의 실제 위치를 찾을 수 있도록 Context 또는 문서 지도 위치를 기록한다.
 - 충돌하는 지침은 임의로 하나를 삭제하지 않고 영향과 결정 필요 여부를 드러낸다.
@@ -168,7 +169,7 @@ docs/archive/
 
 - 사용자 요청, 명세, 코드의 현재 상태에서 확인 가능한 결과 단위로 작성한다.
 - `Now`, `Next`, `Later`, `Out of Scope`를 구분한다.
-- 각 항목에 목적, 완료 조건, 의존성, 상태를 둔다.
+- 각 항목에 목적, 완료 조건, 선행 조건, 상태를 둔다.
 - 근거 없는 미래 기능을 만들어내지 않는다.
 - 정보가 부족하면 초기 조사와 결정 작업 자체를 Backlog로 둔다.
 
@@ -187,10 +188,10 @@ docs/archive/
 - 선택 이유와 주요 대안이 확인되지 않으면 모른다고 명시한다.
 - 기존 결정과 충돌하면 대체 관계를 임의로 만들지 말고 확인 대상으로 남긴다.
 
-### 7.6 Technology Decisions
+### 7.6 Major Decisions
 
-- 의존성, 공개 계약, 데이터 구조, 배포, 보안·운영 경계처럼 되돌리기 어려운 결정이 실제로 확인될 때만 결정별 문서를 만든다.
-- 단지 사용 중인 기술을 발견했다는 이유만으로 선택 근거를 꾸며내지 않는다.
+- 외부 구성, 공개 계약, 정보 구조, 제공 방식, 안전·운영 경계처럼 되돌리기 어려운 결정이 실제로 확인될 때만 결정별 문서를 만든다.
+- 단지 사용 중인 요소를 발견했다는 이유만으로 선택 근거를 꾸며내지 않는다.
 - 근거를 확인할 수 없으면 Decision Log의 미확정 질문으로 둔다.
 
 ### 7.7 Troubleshooting Log

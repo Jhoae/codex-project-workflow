@@ -3,23 +3,23 @@
 - Last updated:
 - Scope:
 
-상세 실행 로그가 아니라 프로젝트 전체 결과, 우선순위, 의존성, 완료 조건을 관리한다.
+상세 실행 로그가 아니라 프로젝트 전체 결과, 우선순위, 선행 조건, 완료 조건을 관리한다.
 
 ## Now
 
-| ID | Outcome | Purpose | Done Criteria | Dependencies | Status | Current Todo |
+| ID | Outcome | Purpose | Done Criteria | Prerequisites | Status | Current Todo |
 |---|---|---|---|---|---|---|
 |  |  |  |  |  | Proposed / Ready / In Progress / Blocked / Done |  |
 
 ## Next
 
-| ID | Outcome | Purpose | Done Criteria | Dependencies | Status |
+| ID | Outcome | Purpose | Done Criteria | Prerequisites | Status |
 |---|---|---|---|---|---|
 |  |  |  |  |  | Proposed / Ready / Blocked |
 
 ## Later
 
-| ID | Outcome | Why Later | Revisit Condition | Dependencies |
+| ID | Outcome | Why Later | Revisit Condition | Prerequisites |
 |---|---|---|---|---|
 |  |  |  |  |  |
 
